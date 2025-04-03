@@ -2,8 +2,14 @@ const MESSAGES = require("./calculator_messages.json");
 
 const readline = require("readline-sync");
 
+const LANGUAGE = "en";
+
 function prompt(message) {
   console.log(`=> ${message}`);
+}
+
+function messages(message, lang = "en") {
+  return MESSAGES[lang][message];
 }
 
 function invalidNumber(number) {
@@ -14,14 +20,14 @@ function invalidOperation(operation) {
   return !["1", "2", "3", "4"].includes(operation);
 }
 
-prompt(MESSAGES.welcome);
+prompt(messages("welcome", "fr"));
 
 while (true) {
   prompt("What's the first number?");
   let number1 = readline.question();
 
   while (invalidNumber(number1)) {
-    prompt(MESSAGES.invalidNum);
+    prompt(messages("invalidNumber", "fr"));
     number1 = readline.question();
   }
 
@@ -29,8 +35,8 @@ while (true) {
   let number2 = readline.question();
 
   while (invalidNumber(number2)) {
-    prompt(MESSAGES.invalidNum);
-    number1 = readline.question();
+    prompt(messages("invalidNumber", "fr"));
+    number2 = readline.question();
   }
 
   console.log(
@@ -61,8 +67,8 @@ while (true) {
 
   console.log(`The result is: ${output}`);
 
-  prompt("Would you like to perform another operation?\n yes or no");
+  prompt("Would you like to perform another operation?\n (yes/no)");
   let response = readline.question();
 
-  if (response[0].toLowerCase() !== "yes") break;
+  if (response.toLowerCase() !== "yes") break;
 }
