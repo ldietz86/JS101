@@ -93,7 +93,7 @@ let number2 = readline.question();
 
 while (invalidNumber(number2)) {
   prompt("Hmm... that doesn't look like a valid number.");
-  number1 = readline.question();
+  number2 = readline.question();
 }
 
 console.log(
