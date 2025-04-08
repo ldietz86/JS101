@@ -45,7 +45,6 @@ while (replay) {
   let userChoice = readline.question();
 
   while (!VALID_CHOICES.includes(userChoice)) {
-    // if the array doesn't include choice, keep displaying error message and asking for input.
     prompt("That's not a valid choice");
     userChoice = readline.question();
   }

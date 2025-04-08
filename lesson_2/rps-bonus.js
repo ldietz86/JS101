@@ -11,6 +11,7 @@ const VALID_CHOICES = {
   l: "lizard",
   sp: "spock",
 };
+
 const CHOICE_KEYS = Object.keys(VALID_CHOICES);
 const CHOICE_VALUES = Object.values(VALID_CHOICES);
 
@@ -43,6 +44,10 @@ function displayWinner(userChoice, computerChoice) {
   }
 }
 
+function isValidChoice(choice) {
+  return CHOICE_KEYS.includes(choice);
+}
+
 while (replay) {
   let userScore = 0;
   let computerScore = 0;
@@ -53,8 +58,8 @@ while (replay) {
     );
     let userInput = readline.question().toLowerCase();
 
-    while (!CHOICE_KEYS.includes(userInput)) {
-      prompt("That's not a valid choice.");
+    while (!isValidChoice(userInput)) {
+      prompt("That's not a valid choice. Please try again.");
       userInput = readline.question().toLowerCase();
     }
 
