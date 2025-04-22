@@ -118,7 +118,7 @@ function messWithIt(someNumber) {
 
 let newAnswer = messWithIt(answer);
 
-console.log(answer - 8); //This refers to the value stored in the globally scoped answer variable.
+console.log(answer - 8); //This refers to the value stored in the globally scoped answer variable. Primitives are immutable. 
 
 //Q8) Spot was playing with the Munster family's home computer, and he wrote a small program to mess with their demographic data:
 let munsters = {
