@@ -121,3 +121,22 @@ console.log(`three is: ${three}`);
  * .splice() is a destructive method
  */
 
+//Q4) Can you identify all of the variables, primitive values, and objects in the following code?
+function boo(scare) {
+  let myBoo = scare.toUpperCase() + "!!!";
+  console.log(myBoo);
+}
+
+const halloweenCollection = {
+  greet: "Happy Halloween",
+  scare: "Boo",
+  wish: "May all your pumpkins be glowing",
+};
+
+let myBoo = boo(halloweenCollection["greet"]);
+
+/**
+ * Variables: boo function, scare parameter, the value stored in myBoo on line 2, halloweenCollection, myBoo on line 12. (console is also a variable name, as console is a property of the global object).
+ * Primitive values: value stored in myBoo variable on line 2, "Happy Halloween", "Boo", "May all your pumpkins be glowing", "greet", "scare", "wish", "greet" on line 12, value stored in myBoo on line 12 (undefined), value passed to boo(), 0, 1, 2.
+ * Objects: boo function, halloweenCollection. (The log and toUpperCase methods and the console object also count - methods are just functions referenced by object properties).
+ */
